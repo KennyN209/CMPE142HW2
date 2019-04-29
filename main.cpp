@@ -1,4 +1,4 @@
-#include <iostream>
+#i#include <iostream>
 #include <fstream>
 #include <string>
 #include <sstream>
@@ -22,15 +22,20 @@ int main() {
         exit(1);
     }
     
-    // reads till eof and converts string to int
+    
     string line;
-    for (int result = 0; getline(file, line, ' '); result = stoi(line))
+    int result;
+    
+   // reads till eof and converts string to int
+    while (getline(file, line, ' '))
     {
-        //cout << line << endl;
+        // stoi converts strings to ints
+        result = stoi(line);
         myintArray.push_back(result);
-        
         cout << result << " ";
     }
+    
+    
     cout << endl;
     file.close();
     return 0;
