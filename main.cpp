@@ -1,4 +1,4 @@
-#i#include <iostream>
+#include <iostream>
 #include <fstream>
 #include <string>
 #include <sstream>
@@ -6,7 +6,7 @@
 #include <vector>
 using namespace std;
 int main() {
-    vector<int> myintArray; // stores strings converted to ints
+    vector<int> myintArray; // stores strings converted to ints on heap
     ifstream file;
     string fileName;
     
@@ -26,14 +26,16 @@ int main() {
     string line;
     int result;
     
-   // reads till eof and converts string to int
+    // reads till eof and converts string to int
     while (getline(file, line, ' '))
     {
-        // stoi converts strings to ints
+        // use stoi to convert string to int
         result = stoi(line);
+        // store in array on heap
         myintArray.push_back(result);
         cout << result << " ";
     }
+    
     
     
     cout << endl;
